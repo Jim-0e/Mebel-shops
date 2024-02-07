@@ -108,6 +108,81 @@ body {
 .menu {
   display: none;
 }
+.menu__logo {
+  width: -moz-max-content;
+  width: max-content;
+  position: absolute;
+  top: 10px;
+}
+@media screen and (max-width: 999px) {
+  .menu__logo {
+    top: 40px;
+    transform: scale(1.4);
+  }
+}
+.menu__logo img {
+  width: 100%;
+  transform: scale(1.1);
+}
+.menu__nav li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.menu__nav li a {
+  position: relative;
+  z-index: 2;
+}
+.menu__nav li a::after {
+  content: "";
+  right: 49%;
+  bottom: 0;
+  position: absolute;
+  width: 3px;
+  height: 5px;
+  transition: 0.5s;
+  transform: translateX(0px);
+  z-index: -2;
+  transform: skewX(30deg);
+}
+.menu__nav li a::before {
+  content: "";
+  left: 50%;
+  bottom: 0;
+  position: absolute;
+  width: 3px;
+  height: 5px;
+  transition: 0.7s;
+  z-index: -2;
+  transform: skewX(30deg);
+}
+.menu__nav li a:hover::before {
+  background-color: #F88500;
+  /* transform: translateX(60px); */
+  width: 50%;
+  box-shadow: 0px 0px 7px #F88500;
+}
+.menu__nav li a:hover::after {
+  background-color: #F88500;
+  width: 50%;
+  box-shadow: 0px 0px 7px #F88500;
+}
+@media screen and (max-width: 630px) {
+  .menu__nav li {
+    font-size: 18px;
+    margin-bottom: 0px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .menu__nav li {
+    margin-bottom: -5px;
+  }
+}
+.menu img {
+  display: block;
+  height: 20px;
+  margin-right: 10px;
+}
 
 @media screen and (max-width: 999px) {
   .menu {
@@ -126,12 +201,12 @@ body {
 @media screen and (max-width: 999px) and (max-width: 630px) {
   .menu {
     width: 30vh;
-    padding-left: 4rem;
+    padding-left: 3rem;
   }
 }
 @media screen and (max-width: 999px) and (max-width: 480px) {
   .menu {
-    width: 25vh;
+    width: 26vh;
     padding-left: 2rem;
   }
 }
@@ -145,15 +220,46 @@ body {
     width: -moz-max-content;
     width: max-content;
   }
+}
+@media screen and (max-width: 999px) and (max-width: 480px) {
+  .menu__nav ul {
+    margin-top: 1rem;
+  }
+}
+@media screen and (max-width: 999px) {
   .menu__nav li {
     width: -moz-max-content;
     width: max-content;
+  }
+}
+@media screen and (max-width: 999px) and (max-width: 630px) {
+  .menu__nav li {
+    font-size: 19px;
+  }
+}
+@media screen and (max-width: 999px) and (max-width: 480px) {
+  .menu__nav li {
+    font-size: 16px;
   }
 }
 @media screen and (max-width: 999px) {
   .active {
     left: 0;
   }
+}
+
+.black {
+  transition: 0.4s;
+}
+.black::after {
+  position: absolute;
+  content: "";
+  right: -350%;
+  top: 0;
+  height: 100%;
+  width: 350%;
+  opacity: 0.6;
+  background-color: rgb(0, 0, 0);
 }
 
 .header {
@@ -163,6 +269,22 @@ body {
   padding: 10px;
   background-color: #202328;
   overflow-x: hidden;
+}
+.header__btn {
+  position: fixed;
+  top: 45px;
+  right: 40px;
+  z-index: 222;
+}
+@media screen and (max-width: 999px) {
+  .header__btn {
+    right: 80px;
+  }
+}
+@media screen and (max-width: 630px) {
+  .header__btn {
+    right: 40px;
+  }
 }
 @media screen and (max-width: 630px) {
   .header {
@@ -187,6 +309,7 @@ body {
   height: 100%;
   width: 100%;
   border-radius: 20px;
+  overflow-x: hidden;
 }
 .header__nav {
   display: flex;
@@ -296,6 +419,12 @@ body {
   .header__slider {
     height: 60px;
     padding-top: 20px;
+  }
+  .header__slider .prev {
+    margin-left: -30px;
+  }
+  .header__slider .next {
+    margin-right: -30px;
   }
 }
 
@@ -919,6 +1048,8 @@ body {
   height: 100%;
   transition: 0.5s;
   border-radius: 20px;
+  overflow-x: hidden;
+  display: block;
 }
 .div-inner {
   width: 100%;
