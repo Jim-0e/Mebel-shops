@@ -77,6 +77,7 @@ prev.onclick = function(){
     count.innerHTML = `0${co}`
     slider.forEach((img)=>{
         console.log(`-**-${n}`)
+        
         img.style.transform =`translateX(100px)`
         
     })
