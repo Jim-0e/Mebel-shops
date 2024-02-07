@@ -152,7 +152,7 @@ body {
   position: absolute;
   width: 3px;
   height: 5px;
-  transition: 0.7s;
+  transition: 0.5s;
   z-index: -2;
   transform: skewX(30deg);
 }
