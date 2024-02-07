@@ -717,11 +717,16 @@ body {
   border-bottom: 3px solid rgb(84, 84, 84);
   height: -moz-max-content;
   height: max-content;
+  overflow: hidden;
   color: black;
   transition: 0.5s;
 }
 .cards__card img {
   width: 100%;
+  transition: 0.5s;
+}
+.cards__card img:hover {
+  transform: scale(1.2);
 }
 .cards__text {
   padding: 40px;
@@ -836,8 +841,25 @@ body {
 .time__year {
   font-size: 53px !important;
 }
+@media screen and (max-width: 480px) {
+  .time__year {
+    font-size: 36px !important;
+  }
+}
 .time span {
   font-size: 21px;
+}
+@media screen and (max-width: 480px) {
+  .time span {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .time {
+    font-size: 33px;
+    height: 50px;
+    width: 180px;
+  }
 }
 @media screen and (max-width: 999px) {
   .time {
@@ -886,6 +908,7 @@ body {
 .section-blog {
   color: black;
   padding: 0 100px;
+  margin-bottom: 3rem;
 }
 @media screen and (max-width: 630px) {
   .section-blog {
