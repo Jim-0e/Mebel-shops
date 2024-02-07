@@ -7,9 +7,11 @@ const headerBtn = document.querySelector('.header__btn')
 
 headerBtn.onclick = function(){
 
+ menu.classList.toggle('black')
 
     navIcon.classList.toggle('nav-icon--active')
     menu.classList.toggle('active')
+   
     document.body.classList.toggle('no-scroll')
 
 }
@@ -81,3 +83,14 @@ prev.onclick = function(){
 }
 
 
+
+
+const black = document.querySelector('.black')
+let content = window.getComputedStyle(black, '::after');
+
+
+content.addEventListener('click', (e)=>{
+    console.log('3243---')
+    console.log(e.target)
+    
+})
