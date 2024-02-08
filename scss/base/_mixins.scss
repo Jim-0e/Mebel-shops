@@ -1,0 +1,20 @@
+
+$tablet: 999px;
+$phone: 630px;
+$phone-mini: 480px;
+
+@mixin mediaTabl{
+    @media screen and (max-width: $tablet){
+        @content;
+    }
+}
+@mixin phone{
+    @media screen and (max-width: $phone){
+        @content;
+    }
+}
+@mixin phone-mini{
+    @media screen and (max-width: $phone-mini){
+        @content;
+    }
+}

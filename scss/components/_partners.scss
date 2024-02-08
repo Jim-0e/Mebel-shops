@@ -1,0 +1,39 @@
+.partners{
+    background: linear-gradient(rgba(0, 0, 0, 0.882), rgba(15, 14, 14, 0.7)), url('/imgs/partners/001.jpg');
+    padding: 70px 80px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    @include phone-mini{
+        padding: 60px 60px;
+    }
+
+    h3{
+        font-size: 35px;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    &__block{
+        display: grid;
+        text-align: center;
+        grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+        gap: 30px;
+        align-items: center;
+
+        
+        @include phone-mini{
+            // display: block;
+            grid-template-columns: none;
+        }
+        &--name p{
+            margin-top: 23px;
+            line-height: 1.5;
+            word-break: break-all;
+        }
+        &--name div{
+            height: 65px;
+        }
+    }
+}

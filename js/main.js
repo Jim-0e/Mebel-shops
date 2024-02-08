@@ -17,81 +17,74 @@ headerBtn.onclick = function(){
 }
 
 
+//---
+
 const next = document.querySelector('.next'),
       prev = document.querySelector('.prev');
 
+const sliders = document.querySelectorAll('.div-inner img')
 
-// next.style.transition = 'all'
-// next.onclick = function(){
-//     headerBlock.style.backgroundImage = `url('imgs/second/01.jpg')`
-// }
+const innerWrap = document.querySelector('.slider');
 
 
-const slider = document.querySelectorAll('.slider img')
-    
-const count = document.querySelector('.count');
+const current = document.querySelector('.count');
 const item = document.querySelector('.item');
 
-let i=0;
-slider.forEach(el =>{
-    el.style.display = 'block'
+let listIndex=1;
+
+innerWrap.style.width = 100 * sliders.length + '%'
+
+const offerWrapper = document.querySelector(".header__block")
+const width = window.getComputedStyle(offerWrapper).width
+
+
+let offest =0
+
+
+sliders.forEach(slid =>{
+    // slid.style.width = width
+    slid.style.width = '100%'
 })
 
-slider.forEach((img)=>{
-    i = img.width
-    console.log(i)
-})
 
-let n=102
-let c=1
-
-
-next.onclick = function(){
-    c++;
-    console.log(c)
-    if (c<4){
-        
-         slider.forEach((img)=>{
-        // let windth = img.width
-        
-        img.style.transform =`translateX(-${n}%)`})
-
-    count.innerHTML = `0${c}`
-    n=202
+next.addEventListener('click', ()=>{
+    if (offest == +width.slice(0, width.length - 2)*(sliders.length -1)){
+        offest = 0
     }else{
-        c=1
-        console.log(c)
-
+        offest+= +width.slice(0, width.length - 2)
     }
-    
-    
-   
-    
-}
+    innerWrap.style.transform = `translateX(-${offest}px)`
 
+    if (listIndex == sliders.length){
+        listIndex = 1
+    }else{
+        listIndex++;
+    }
+    if (sliders.length < 10){
+        current.innerHTML = `0${listIndex}`
+    }else{
+        current.innerHTML = listIndex
+    }
 
+})
 
-prev.onclick = function(){
-    n= 102
-    let co=1
-    count.innerHTML = `0${co}`
-    slider.forEach((img)=>{
-        console.log(`-**-${n}`)
-        
-        img.style.transform =`translateX(100px)`
-        
-    })
-}
+prev.addEventListener('click', ()=>{
+    if (offest == 0){
+        offest =+width.slice(0, width.length - 2)* (sliders.length-1)
+    }else{
+        offest -= +width.slice(0, width.length - 2)
+    }
+    innerWrap.style.transform = `translateX(-${offest}px)`
 
+    if (listIndex == 1){
+        listIndex = sliders.length
+    }else{
+        listIndex--;
+    }
 
-
-
-const black = document.querySelector('.black')
-let content = window.getComputedStyle(black, '::after');
-
-
-content.addEventListener('click', (e)=>{
-    console.log('3243---')
-    console.log(e.target)
-    
+    if (sliders.length < 10){
+        current.innerHTML = `0${listIndex}`
+    }else{
+        current.innerHTML = listIndex
+    }
 })

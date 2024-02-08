@@ -1,0 +1,130 @@
+.third-section{
+    height: 750px;
+    position: relative;
+    @include phone{
+        // height: max-content;
+    }
+    @include mediaTabl{
+        
+        height: min-content;
+    }
+}
+.wors_block{
+    height: 50%;
+    padding: 74px 150px;
+    background-color: $color-dark;
+    @include mediaTabl{
+        position: relative;
+        padding: 54px 50px;
+        height: min-content;
+        margin-bottom: 2rem;
+    }
+    @include phone{
+        padding: 54px 50px;
+        height: max-content;
+    }
+    &__text-block{
+        // height: 120px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+    &__block-1{
+        border-right: 4px solid #2D3038;
+        padding: 10px 50px;
+        line-height: 1.5;
+        // width: 100%;
+        text-align: right;
+        @include phone{
+            padding: 0px 20px;
+            
+        }
+    }
+    &__block-2{
+        margin-left: 50px;
+        & h3{
+            color: #F88500 ;
+            margin-bottom: 10px;
+        }
+        & h1{
+            font-size: 25px;
+            font-weight: 700;
+            word-break: break-all;
+        }
+        @include phone{
+            width: 100%;
+            margin-left: 0px;
+            padding-left: 20px;
+        }
+    }   
+}
+
+
+.cards{
+    position: absolute;
+    
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    display: grid;
+    gap: 20px;
+    grid-template-columns:  repeat(3, 1fr);
+    width: 80%;
+    @include mediaTabl{
+        position: relative;
+        grid-template-columns:  repeat(auto-fit, minmax(190px, 2fr));
+       
+        left: 10%;
+        transform: translate(0%, 0%);
+
+    }
+    @include phone{
+
+        display: flex;
+        flex-wrap: wrap;
+    }
+    @media screen and (max-width: 750px) {
+        grid-template-columns:  1fr 1fr;
+
+        top: 110%;
+    }
+    &__card {
+        background-color: rgb(243, 243, 243);
+        // width: 350px;
+        border-bottom: 3px solid rgb(84, 84, 84);
+        height: max-content;
+        overflow: hidden;
+        & img{
+            width: 100%;
+            transition: .5s;
+            
+        }
+        img:hover{
+            transform: scale(1.2);
+            
+        }
+        color: black;
+        transition: .5s;
+        // &:hover {
+        //     transform: scale(1.5)
+        // }
+    }   
+    &__text{
+        padding: 40px;
+        p{
+            color: #989DA5;
+            
+        }
+
+    }
+}
+.card__p-2{
+    font-size: 20px ;
+    color: black !important;
+    font-weight: bolder;
+    margin-top: 15px;
+}
+.card-wrapper{
+
+}

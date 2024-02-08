@@ -1,0 +1,160 @@
+.menu{
+    display: none;
+    margin-top: -1rem;
+    width: max-content !important;
+
+    &__logo{
+        width: max-content;
+        position: absolute;
+        @include mediaTabl{
+            top: 40px;
+            transform: scale(1.4);
+        }
+        top: 10px;
+        img{
+            width: 100%;
+            transform: scale(1.1);
+        }
+    }
+    
+    &__nav li{
+        display: flex;
+      align-items: center;
+      justify-content: space-between;
+      a{
+        position: relative;
+        z-index: 2;
+      }
+      
+      a::after{
+        content: "";
+        right: 49%;
+        bottom: 0;
+        position: absolute;
+        width: 3px;
+        height: 5px;
+        transition: .5s;
+        transform: translateX(0px);
+        z-index: -2;
+        transform: skewX(30deg);
+        
+      }
+      a::before{
+        content: "";
+        left: 50%;
+        bottom: 0;
+        position: absolute;
+
+        width: 3px;
+        height: 5px;
+        transition: .5s;
+        z-index: -2;
+        transform: skewX(30deg);
+      }
+      a:hover::before,
+      a:active::after{
+         background-color: #F88500;
+        
+        width: 50%;
+        box-shadow: 0px 0px 7px #F88500;
+        
+    }
+      a:hover::after,
+      a:active::after{
+        background-color: #F88500;
+        width: 50%;
+        box-shadow: 0px 0px 7px #F88500;
+      
+      }
+      
+
+      @include phone{
+        font-size: 18px;
+        margin-bottom: 0px;
+      }
+      @include phone-mini{
+        
+        margin-bottom: -5px;
+      }
+    }
+    img{
+        // display: block;
+        height: 20px;
+        margin-right: 10px;
+        
+    }
+}
+@include mediaTabl{
+   .menu{
+    display: block;
+    position: fixed;
+    background-color: $color-dark-black;
+    width: 40vh;
+    height: 100vh;
+    z-index: 5;
+    left: -450px;
+    transition: .4s all ease-in;
+    padding-left: 4rem;
+    padding-right: 3rem;
+    padding-top: 5rem;
+    @include phone{
+        width: 30vh;
+        padding-left: 3rem;
+    }
+    @include phone-mini{
+        width: 26vh;
+        padding-left: 2rem;
+        
+    }
+    &__nav{
+        line-height: 3;
+        font-size: 20px;
+        text-transform: uppercase;
+        ul{
+            width: max-content;
+            @include phone-mini{
+                margin-top: 1rem;
+           
+            }
+        }
+        li {
+            width: max-content;
+            @include phone{
+                font-size: 19px;
+            }
+            @include phone-mini{
+                font-size: 16px;
+            }
+        }
+    }
+} 
+}
+
+
+.active{
+    @include mediaTabl{
+        left: 0;
+    }
+    
+}
+    
+.black{
+    transition: .4s;
+    &::after{
+        position: absolute;
+        content:"";
+        right:  -350%;
+        top: 0;
+        height: 100%;
+        width: 350%;
+        opacity: .6;
+        background-color: rgb(0, 0, 0);
+    }
+}
+
+.ul-block{
+    display: flex;
+    align-items: center;
+
+   
+}

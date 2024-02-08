@@ -1,0 +1,22 @@
+.container{
+    
+    margin: 0 4rem;
+    @include phone{
+        margin: 0 2rem;
+    }
+}
+a{
+    text-decoration: none;
+    color: #ffffff;
+}
+body{
+    color: white;
+    font-family: $font-main;
+}
+
+.none{
+    display: none !important;
+}
+.no-scroll{
+    overflow-y: hidden;
+}
